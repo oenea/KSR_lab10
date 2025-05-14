@@ -1,0 +1,11 @@
+C:\Users\oenea\Downloads\lab10\Kontrakty\bin\Debug\net9.0\Kontrakty.deps.json
+C:\Users\oenea\Downloads\lab10\Kontrakty\bin\Debug\net9.0\Kontrakty.dll
+C:\Users\oenea\Downloads\lab10\Kontrakty\bin\Debug\net9.0\Kontrakty.pdb
+C:\Users\oenea\Downloads\lab10\Kontrakty\obj\Debug\net9.0\Kontrakty.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oenea\Downloads\lab10\Kontrakty\obj\Debug\net9.0\Kontrakty.AssemblyInfoInputs.cache
+C:\Users\oenea\Downloads\lab10\Kontrakty\obj\Debug\net9.0\Kontrakty.AssemblyInfo.cs
+C:\Users\oenea\Downloads\lab10\Kontrakty\obj\Debug\net9.0\Kontrakty.csproj.CoreCompileInputs.cache
+C:\Users\oenea\Downloads\lab10\Kontrakty\obj\Debug\net9.0\Kontrakty.dll
+C:\Users\oenea\Downloads\lab10\Kontrakty\obj\Debug\net9.0\refint\Kontrakty.dll
+C:\Users\oenea\Downloads\lab10\Kontrakty\obj\Debug\net9.0\Kontrakty.pdb
+C:\Users\oenea\Downloads\lab10\Kontrakty\obj\Debug\net9.0\ref\Kontrakty.dll
