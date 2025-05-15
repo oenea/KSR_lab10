@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "suMTzmeBZAU=",
+  "dgSpecHash": "2QN83T2wL9Q=",
   "success": true,
-  "projectFilePath": "C:\\Users\\oenea\\Downloads\\lab10\\Kontrakty\\Kontrakty.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/oenea/KSR_lab10/Kontrakty/Kontrakty.csproj",
+  "expectedPackageFiles": [
+    "/home/oenea/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.4/microsoft.aspnetcore.app.ref.9.0.4.nupkg.sha512"
+  ],
   "logs": []
 }

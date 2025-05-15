@@ -3,19 +3,6 @@ using MassTransit;
 using System;
 using System.Threading.Tasks; 
 
-
-public static class ConsoleColors
-{
-    public const string Reset = "\x1b[0m";
-    public const string Green = "\x1b[32m";
-    public const string Red = "\x1b[31m";
-    public const string Yellow = "\x1b[33m";
-    public const string Blue = "\x1b[34m";
-    public const string Magenta = "\x1b[35m";
-    public const string Cyan = "\x1b[36m";
-    public const string White = "\x1b[37m";
-}
-
 public class StanZamowieniaSaga : MassTransitStateMachine<StanZamowienia>
 {
     public State? Oczekujacy { get; private set; }
@@ -57,7 +44,7 @@ public class StanZamowieniaSaga : MassTransitStateMachine<StanZamowienia>
                 .Then(context =>
                 {
                     Console.WriteLine(
-                        $"{ConsoleColors.Magenta}[Sklep]{ConsoleColors.Reset} Zamówienie rozpoczęte przez klienta {ConsoleColors.Cyan}{context.Message.Klient}{ConsoleColors.Reset}, ilość: {ConsoleColors.Yellow}{context.Message.Ilosc}{ConsoleColors.Reset}"
+                        $"{ConsoleColors.Brown}[Sklep]{ConsoleColors.Reset} Zamówienie rozpoczęte przez klienta {ConsoleColors.Cyan}{context.Message.Klient}{ConsoleColors.Reset}, ilość: {ConsoleColors.Yellow}{context.Message.Ilosc}{ConsoleColors.Reset}"
                     );
                     context.Saga.Ilosc = context.Message.Ilosc;
                     context.Saga.Klient = context.Message.Klient;
@@ -70,7 +57,7 @@ public class StanZamowieniaSaga : MassTransitStateMachine<StanZamowienia>
                 .ThenAsync(async context =>
                 {
                     Console.WriteLine(
-                        $"{ConsoleColors.Magenta}[Sklep]{ConsoleColors.Reset} Wysyłam zapytanie do magazynu o dostępność {ConsoleColors.Yellow}{context.Saga.Ilosc}{ConsoleColors.Reset} sztuk."
+                        $"{ConsoleColors.Brown}[Sklep]{ConsoleColors.Reset} Wysyłam zapytanie do magazynu o dostępność {ConsoleColors.Yellow}{context.Saga.Ilosc}{ConsoleColors.Reset} sztuk."
                     );
                     var endpoint = await context.GetSendEndpoint(new Uri("queue:magazyn"));
                     await endpoint.Send(
@@ -78,7 +65,7 @@ public class StanZamowieniaSaga : MassTransitStateMachine<StanZamowienia>
                     );
 
                     Console.WriteLine(
-                        $"{ConsoleColors.Magenta}[Sklep]{ConsoleColors.Reset} Wysyłam zapytanie do klienta {ConsoleColors.Cyan}{context.Saga.Klient}{ConsoleColors.Reset} o potwierdzenie zamówienia."
+                        $"{ConsoleColors.Brown}[Sklep]{ConsoleColors.Reset} Wysyłam zapytanie do klienta {ConsoleColors.Cyan}{context.Saga.Klient}{ConsoleColors.Reset} o potwierdzenie zamówienia."
                     );
                     endpoint = await context.GetSendEndpoint(
                         new Uri($"queue:klient-{context.Saga.Klient}")
@@ -95,7 +82,7 @@ public class StanZamowieniaSaga : MassTransitStateMachine<StanZamowienia>
                 .Then(context =>
                 {
                     Console.WriteLine(
-                        $"{ConsoleColors.Magenta}[Sklep]{ConsoleColors.Green} Klient {ConsoleColors.Cyan}{context.Saga.Klient}{ConsoleColors.Reset}{ConsoleColors.Green} potwierdził zamówienie na {ConsoleColors.Yellow}{context.Saga.Ilosc}{ConsoleColors.Reset}{ConsoleColors.Green} sztuk.{ConsoleColors.Reset}"
+                        $"{ConsoleColors.Brown}[Sklep]{ConsoleColors.Green} Klient {ConsoleColors.Cyan}{context.Saga.Klient}{ConsoleColors.Reset}{ConsoleColors.Green} potwierdził zamówienie na {ConsoleColors.Yellow}{context.Saga.Ilosc}{ConsoleColors.Reset}{ConsoleColors.Green} sztuk.{ConsoleColors.Reset}"
                     );
                     context.Saga.CzyKlientPotwierdzil = true;
                 })
@@ -105,7 +92,7 @@ public class StanZamowieniaSaga : MassTransitStateMachine<StanZamowienia>
                 .ThenAsync(async context =>
                 {
                     Console.WriteLine(
-                        $"{ConsoleColors.Magenta}[Sklep]{ConsoleColors.Red} Klient {ConsoleColors.Cyan}{context.Saga.Klient}{ConsoleColors.Reset}{ConsoleColors.Red} nie potwierdził zamówienia na {ConsoleColors.Yellow}{context.Saga.Ilosc}{ConsoleColors.Reset}{ConsoleColors.Red} sztuk. Wysyłam do hurtowni informację o odrzuceniu zamówienia.{ConsoleColors.Reset}"
+                        $"{ConsoleColors.Brown}[Sklep]{ConsoleColors.Red} Klient {ConsoleColors.Cyan}{context.Saga.Klient}{ConsoleColors.Reset}{ConsoleColors.Red} nie potwierdził zamówienia na {ConsoleColors.Yellow}{context.Saga.Ilosc}{ConsoleColors.Reset}{ConsoleColors.Red} sztuk. Wysyłam do magazynu informację o odrzuceniu zamówienia.{ConsoleColors.Reset}"
                     );
                     var endpoint = await context.GetSendEndpoint(new Uri($"queue:magazyn"));
                     await endpoint.Send(
@@ -116,7 +103,7 @@ public class StanZamowieniaSaga : MassTransitStateMachine<StanZamowienia>
                 .Then(context =>
                 {
                     Console.WriteLine(
-                        $"{ConsoleColors.Magenta}[Sklep]{ConsoleColors.Green} Magazyn potwierdził dostępność {ConsoleColors.Yellow}{context.Saga.Ilosc}{ConsoleColors.Reset}{ConsoleColors.Green} sztuk.{ConsoleColors.Reset}"
+                        $"{ConsoleColors.Brown}[Sklep]{ConsoleColors.Green} Magazyn potwierdził dostępność {ConsoleColors.Yellow}{context.Saga.Ilosc}{ConsoleColors.Reset}{ConsoleColors.Green} sztuk.{ConsoleColors.Reset}"
                     );
                     context.Saga.CzyMagazynPotwierdzil = true;
                 })
@@ -126,7 +113,7 @@ public class StanZamowieniaSaga : MassTransitStateMachine<StanZamowienia>
                 .ThenAsync(async context =>
                 {
                     Console.WriteLine(
-                        $"{ConsoleColors.Magenta}[Sklep]{ConsoleColors.Red} Magazyn nie potwierdził dostępności {ConsoleColors.Yellow}{context.Saga.Ilosc}{ConsoleColors.Reset}{ConsoleColors.Red} sztuk. Wysyłam do klienta informację o odrzuceniu zamówienia.{ConsoleColors.Reset}"
+                        $"{ConsoleColors.Brown}[Sklep]{ConsoleColors.Red} Magazyn nie potwierdził dostępności {ConsoleColors.Yellow}{context.Saga.Ilosc}{ConsoleColors.Reset}{ConsoleColors.Red} sztuk. Wysyłam do klienta informację o odrzuceniu zamówienia.{ConsoleColors.Reset}"
                     );
                     var endpoint = await context.GetSendEndpoint(
                         new Uri($"queue:klient-{context.Saga.Klient}")
@@ -140,7 +127,7 @@ public class StanZamowieniaSaga : MassTransitStateMachine<StanZamowienia>
                 .ThenAsync(async context =>
                 {
                     Console.WriteLine(
-                        $"{ConsoleColors.Magenta}[Sklep]{ConsoleColors.Red} Zamówienie wygasło. Wysyłam do magazynu i klienta informację o odrzuceniu zamówienia.{ConsoleColors.Reset}"
+                        $"{ConsoleColors.Brown}[Sklep]{ConsoleColors.Red} Zamówienie wygasło. Wysyłam do magazynu i klienta informację o odrzuceniu zamówienia.{ConsoleColors.Reset}"
                     );
                     var kontrakt = new OdrzucenieZamowienia(
                         context.Saga.Ilosc,
@@ -161,7 +148,7 @@ public class StanZamowieniaSaga : MassTransitStateMachine<StanZamowienia>
         if (context.Saga.CzyKlientPotwierdzil && context.Saga.CzyMagazynPotwierdzil)
         {
             Console.WriteLine(
-                $"{ConsoleColors.Magenta}[Sklep]{ConsoleColors.Green} Zamówienie na {ConsoleColors.Yellow}{context.Saga.Ilosc}{ConsoleColors.Reset}{ConsoleColors.Green} sztuk zostało potwierdzone przez klienta {ConsoleColors.Cyan}{context.Saga.Klient}{ConsoleColors.Reset}{ConsoleColors.Green} i hurtownię. Przechodzę do stanu potwierdzonego.{ConsoleColors.Reset}"
+                $"{ConsoleColors.Brown}[Sklep]{ConsoleColors.Green} Zamówienie na {ConsoleColors.Yellow}{context.Saga.Ilosc}{ConsoleColors.Reset}{ConsoleColors.Green} sztuk zostało potwierdzone przez klienta {ConsoleColors.Cyan}{context.Saga.Klient}{ConsoleColors.Reset}{ConsoleColors.Green} i magazynu. Przechodzę do stanu potwierdzonego.{ConsoleColors.Reset}"
             );
             context.Saga.CurrentState = Potwierdzony?.Name ?? nameof(Potwierdzony);
 

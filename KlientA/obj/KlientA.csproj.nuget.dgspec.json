@@ -1,40 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\oenea\\Downloads\\lab10\\KlientA\\KlientA.csproj": {}
+    "/home/oenea/KSR_lab10/KlientA/KlientA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\oenea\\Downloads\\lab10\\KlientA\\KlientA.csproj": {
+    "/home/oenea/KSR_lab10/KlientA/KlientA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oenea\\Downloads\\lab10\\KlientA\\KlientA.csproj",
+        "projectUniqueName": "/home/oenea/KSR_lab10/KlientA/KlientA.csproj",
         "projectName": "KlientA",
-        "projectPath": "C:\\Users\\oenea\\Downloads\\lab10\\KlientA\\KlientA.csproj",
-        "packagesPath": "C:\\Users\\oenea\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oenea\\Downloads\\lab10\\KlientA\\obj\\",
+        "projectPath": "/home/oenea/KSR_lab10/KlientA/KlientA.csproj",
+        "packagesPath": "/home/oenea/.nuget/packages/",
+        "outputPath": "/home/oenea/KSR_lab10/KlientA/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\oenea\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/oenea/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\oenea\\Downloads\\lab10\\Kontrakty\\Kontrakty.csproj": {
-                "projectPath": "C:\\Users\\oenea\\Downloads\\lab10\\Kontrakty\\Kontrakty.csproj"
+              "/home/oenea/KSR_lab10/Kontrakty/Kontrakty.csproj": {
+                "projectPath": "/home/oenea/KSR_lab10/Kontrakty/Kontrakty.csproj"
               }
             }
           }
@@ -49,7 +42,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -71,38 +64,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.4, 9.0.4]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\oenea\\Downloads\\lab10\\Kontrakty\\Kontrakty.csproj": {
+    "/home/oenea/KSR_lab10/Kontrakty/Kontrakty.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oenea\\Downloads\\lab10\\Kontrakty\\Kontrakty.csproj",
+        "projectUniqueName": "/home/oenea/KSR_lab10/Kontrakty/Kontrakty.csproj",
         "projectName": "Kontrakty",
-        "projectPath": "C:\\Users\\oenea\\Downloads\\lab10\\Kontrakty\\Kontrakty.csproj",
-        "packagesPath": "C:\\Users\\oenea\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oenea\\Downloads\\lab10\\Kontrakty\\obj\\",
+        "projectPath": "/home/oenea/KSR_lab10/Kontrakty/Kontrakty.csproj",
+        "packagesPath": "/home/oenea/.nuget/packages/",
+        "outputPath": "/home/oenea/KSR_lab10/Kontrakty/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\oenea\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/oenea/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -121,7 +113,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -137,12 +129,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.4, 9.0.4]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

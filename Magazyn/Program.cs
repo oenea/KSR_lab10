@@ -64,7 +64,7 @@ var bus = Bus.Factory.CreateUsingRabbitMq(cfg =>
 
 await bus.StartAsync();
 
-Console.WriteLine($"{ConsoleColors.Blue}[Magazyn]{ConsoleColors.Reset} Wpisz ilość sztuk do dodania (lub wciśnij Enter, aby zakończyć):");
+Console.WriteLine($"{ConsoleColors.Orange}[Magazyn]{ConsoleColors.Reset} Wpisz ilość sztuk do dodania (lub wciśnij Enter, aby zakończyć):");
 while (true)
 {
     var input = Console.ReadLine();
@@ -75,7 +75,7 @@ while (true)
     {
         wolne += ilosc;
         Console.WriteLine(
-            $"{ConsoleColors.Blue}[Magazyn]{ConsoleColors.Reset} Dodano {ConsoleColors.Cyan}{ilosc}{ConsoleColors.Reset} sztuk do stanu magazynowego. {ConsoleColors.Yellow}Wolne:{ConsoleColors.Reset} {wolne}, {ConsoleColors.Magenta}Zarezerwowane:{ConsoleColors.Reset} {zarezerwowane}"
+            $"{ConsoleColors.Orange}[Magazyn]{ConsoleColors.Reset} Dodano {ConsoleColors.Cyan}{ilosc}{ConsoleColors.Reset} sztuk do stanu magazynowego. {ConsoleColors.Yellow}Wolne:{ConsoleColors.Reset} {wolne}, {ConsoleColors.Magenta}Zarezerwowane:{ConsoleColors.Reset} {zarezerwowane}"
         );
     }
     else

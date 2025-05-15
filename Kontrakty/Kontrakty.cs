@@ -19,4 +19,25 @@ public static class ConsoleColors
     public const string Blue = "\x1b[34m";
     public const string Magenta = "\x1b[35m";
     public const string Cyan = "\x1b[36m";
+    public const string Black = "\x1b[30m";
+    public const string BrightBlack = "\x1b[90m";
+    public const string BrightRed = "\x1b[91m";
+    public const string BrightGreen = "\x1b[92m";
+    public const string BrightYellow = "\x1b[93m";
+    public const string BrightBlue = "\x1b[94m";
+    public const string BrightMagenta = "\x1b[95m";
+    public const string BrightCyan = "\x1b[96m";
+    public const string BrightWhite = "\x1b[97m";
+    public const string DarkRed = "\x1b[31;2m";
+    public const string DarkGreen = "\x1b[32;2m";
+    public const string DarkYellow = "\x1b[33;2m";
+    public const string DarkBlue = "\x1b[34;2m";
+    public const string DarkMagenta = "\x1b[35;2m";
+    public const string DarkCyan = "\x1b[36;2m";
+    public const string LightGray = "\x1b[37m";
+    public const string Gray = "\x1b[90m"; 
+    public const string Orange = "\x1b[38;5;208m";
+    public const string Pink = "\x1b[38;5;213m";
+    public const string Violet = "\x1b[38;5;141m";
+    public const string Brown = "\x1b[38;5;94m";
 }

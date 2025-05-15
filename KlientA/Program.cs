@@ -60,14 +60,14 @@ var bus = Bus.Factory.CreateUsingRabbitMq(cfg =>
 
 await bus.StartAsync();
 
-Console.WriteLine($"{ConsoleColors.Blue}[Klient A]{ConsoleColors.Reset} Naciśnij {ConsoleColors.Yellow}O{ConsoleColors.Reset}, aby wysłać zamówienie. Naciśnij {ConsoleColors.Yellow}Enter{ConsoleColors.Reset}, aby zakończyć.");
+Console.WriteLine($"{ConsoleColors.Blue}[Klient A]{ConsoleColors.Reset} Naciśnij {ConsoleColors.Yellow}Z{ConsoleColors.Reset}, aby wysłać zamówienie. Naciśnij {ConsoleColors.Yellow}Enter{ConsoleColors.Reset}, aby zakończyć.");
 
 while (true)
 {
     var key = Console.ReadKey(true);
     if (key.Key == ConsoleKey.Enter)
         break;
-    if (key.Key != ConsoleKey.O)
+    if (key.Key != ConsoleKey.Z)
         continue;
 
     Console.Write($"{ConsoleColors.Blue}[Klient A]{ConsoleColors.Reset} Wpisz ilość sztuk do zamówienia: ");
